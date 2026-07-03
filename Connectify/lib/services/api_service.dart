@@ -16,9 +16,8 @@ class ApiService {
   /// Fetches the list of users from the JSONPlaceholder API.
   /// Throws an [Exception] if the request fails or returns a non-200 status.
   Future<List<UserModel>> fetchUsers() async {
-  final url = Uri.parse(_baseUrl);
-  await Future.delayed(const Duration(seconds: 5));
-  final response = await http.get(url);
+    final url = Uri.parse(_baseUrl);
+    final response = await http.get(url);
 
     if (response.statusCode != 200) {
       throw Exception(
